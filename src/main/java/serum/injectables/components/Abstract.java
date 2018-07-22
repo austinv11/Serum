@@ -15,8 +15,13 @@
  * along with Serum.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@NonNullPackage
-@Abstract
 package serum.injectables.components;
 
-import syringe.util.NonNullPackage;
+import java.lang.annotation.*;
+
+@Documented
+@Target({ElementType.PACKAGE, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Spreadable(from = ElementType.PACKAGE, to = ElementType.ANNOTATION_TYPE)
+public @interface Abstract {
+}
