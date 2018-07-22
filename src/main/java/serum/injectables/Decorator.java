@@ -27,6 +27,11 @@ import syringe.callbacks.method.MethodReturnCallback;
 
 import java.lang.annotation.*;
 
+/**
+ * This is a wrapper for {@link serum.injectables.InterceptInvocation}, {@link serum.injectables.InterceptReturn},
+ * and {@link serum.injectables.InterceptException} to act as a conveinence if you want full control over a method's
+ * invocation.
+ */
 @Injectable
 @Spreadable(from = ElementType.TYPE, to = {ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Extends(InterceptInvocation.class)

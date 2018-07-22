@@ -20,9 +20,21 @@ package serum.injectables.components;
 import javax.annotation.Nullable;
 import java.lang.annotation.Annotation;
 
+/**
+ * This represents an invocation delegate for {@link serum.injectables.components.DynamicProperty}.
+ */
 @FunctionalInterface
 public interface InvocationDelegate {
 
+    /**
+     * This is called to get a dynamic annotation property.
+     *
+     * @param propertyOwner The top-level owner of the property.
+     * @param propertyName The name of the property.
+     * @param propertyType The expected type for the property value.
+     * @param currValue The current value of the property.
+     * @return The generated property value.
+     */
     @Nullable
-    Object invoke(Annotation propertyOwner, String propertyName, @Nullable Object currValue);
+    Object invoke(Annotation propertyOwner, String propertyName, Class<?> propertyType, @Nullable Object currValue);
 }

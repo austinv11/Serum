@@ -19,6 +19,10 @@ package serum.injectables.components;
 
 import java.lang.annotation.*;
 
+/**
+ * This is a simple marker annotation to be used as a base by any Serum annotations (both built-in or user-defined).
+ * This is considered the root-level "superclass" and should not be used directly.
+ */
 @Documented
 @Target(ElementType.ANNOTATION_TYPE)
 @Retention(RetentionPolicy.RUNTIME)

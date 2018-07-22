@@ -23,6 +23,9 @@ import syringe.callbacks.method.MethodInvocationCallback;
 
 import java.lang.annotation.*;
 
+/**
+ * This marks a target for invocation interception.
+ */
 @Injectable
 @Spreadable(from = ElementType.TYPE, to = {ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Documented

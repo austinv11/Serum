@@ -19,12 +19,29 @@ package serum.injectables.components;
 
 import java.lang.annotation.*;
 
+/**
+ * This is a meta-annotation which acts similarly to {@link javax.annotation.meta.TypeQualifier}. Essentially, this
+ * provides a way to have injectables "spread" to child elements to reduce boilerplate. For example, you can have
+ * an @NonNull annotation equivalent spreadable from {@link java.lang.annotation.ElementType#PACKAGE} to
+ * {@link java.lang.annotation.ElementType#METHOD}. Now, when you annotation a package with this annotation,
+ * the {@link serum.SerumManager} will automatically apply @NonNull to every method within the package ("spreading" it).
+ */
 @Documented
 @Target(ElementType.ANNOTATION_TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Spreadable {
 
+    /**
+     * The top-level targets to consider for spreading.
+     *
+     * @return The targets where spreading can occur.
+     */
     ElementType[] from();
 
+    /**
+     * The lower-level child targets for spreading to be done.
+     *
+     * @return The targets from which top-level annotations are applied to.
+     */
     ElementType[] to();
 }

@@ -19,6 +19,10 @@ package serum.injectables.components;
 
 import java.lang.annotation.*;
 
+/**
+ * This is a marker annotation for declaring than an annotation is "abstract". This means that the annotation is not
+ * allowed to be used on its own, instead another annotation must inherit its properties.
+ */
 @Documented
 @Target({ElementType.PACKAGE, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)

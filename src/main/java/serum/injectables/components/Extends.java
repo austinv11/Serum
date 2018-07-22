@@ -19,6 +19,10 @@ package serum.injectables.components;
 
 import java.lang.annotation.*;
 
+/**
+ * This is a meta annotation declaring that an annotation is extending another one. This allows for a child annotation
+ * to override properties from the parent, instead of simply using a parent meta-annotation value.
+ */
 @Documented
 @Target(ElementType.ANNOTATION_TYPE)
 @Retention(RetentionPolicy.RUNTIME)

@@ -19,12 +19,26 @@ package serum.injectables.components;
 
 import java.lang.annotation.*;
 
+/**
+ * This is a helper annotation for defining annotation inheritence. This allows for linking some of the current
+ * annotation's properties to a superclass (annotation)'s property.
+ */
 @Documented
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PropertyBinding {
 
+    /**
+     * The property this should be bound to on the superclass.
+     *
+     * @return The name of the binding.
+     */
     String binding();
 
+    /**
+     * The superclass that this property is bound to.
+     *
+     * @return The superclass to bind.
+     */
     Class<? extends Annotation> from();
 }

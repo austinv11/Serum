@@ -22,6 +22,9 @@ import syringe.callbacks.method.ExceptionThrownCallback;
 
 import java.lang.annotation.*;
 
+/**
+ * This marks a target for exception interception.
+ */
 @Injectable
 @Spreadable(from = ElementType.TYPE, to = {ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Documented

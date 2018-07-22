@@ -19,6 +19,11 @@ package serum.injectables.components;
 
 import java.lang.annotation.*;
 
+/**
+ * This marks an annotation's property as being dynamic. What this means is that whatever the result of a property will
+ * be ignored, instead the designated {@link serum.injectables.components.InvocationDelegate} will be called to
+ * generate the property value on-the-fly.
+ */
 @Documented
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
